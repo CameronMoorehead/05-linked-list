@@ -4,7 +4,8 @@
   "description": "linked list lab",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest -i --coverage || exit 0",
+    "lint": "eslint **/*.js || exit 0"
   },
   "repository": {
     "type": "git",
