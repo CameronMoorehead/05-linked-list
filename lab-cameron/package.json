@@ -1,0 +1,27 @@
+{
+  "name": "lab-cameron",
+  "version": "1.0.0",
+  "description": "linked list lab",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CameronMoorehead/05-linked-list.git"
+  },
+  "keywords": [
+    "linked",
+    "lists"
+  ],
+  "author": "Cameron Moorehead",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CameronMoorehead/05-linked-list/issues"
+  },
+  "homepage": "https://github.com/CameronMoorehead/05-linked-list#readme",
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "jest": "^21.2.1"
+  }
+}
