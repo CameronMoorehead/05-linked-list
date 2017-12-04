@@ -21,7 +21,15 @@ class LinkedList {
   }
 
   find(value) {
-    console.log(value);
+    if (this.value === null) {
+      throw new ReferenceError('<value> cannot be found');
+    }
+
+    if (this.value === value) {
+      return this;
+    } else {
+      return this.next.find(value);
+    }
   }
 
   remove(node) {
@@ -29,7 +37,7 @@ class LinkedList {
       throw new TypeError('<node> should be an instance of LinkedList');
     }
 
-    if (!this.next) {
+    if (!this.next && this === node) {
       this.value = null;
       return this;
     }

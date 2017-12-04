@@ -20,6 +20,35 @@ describe('linked-list.js', () => {
       expect(result.next.next.value).toEqual(10);
       expect(result.next.next.next).toBeNull();
     });
+
+    test('throw an error if node is not an instance of LinkedList', () => {
+      const first = new LinkedList(10);
+      const second = 'not a linked list';
+
+      expect(() => { first.append(second); }).toThrow();
+    });
+
+
+  });
+
+  describe('find method', () => {
+    test('return the node within the list the the corresponding value', () => {
+      const first = new LinkedList(10);
+      const second = new LinkedList(20);
+
+      first.append(second);
+
+      const result = first.find(20);
+      const expected = { value: 20, next: null};
+
+      expect(result).toEqual(expected);
+    });
+
+    test('throw an error if node cannot be found within the list', () => {
+      const first = new LinkedList(10);
+
+      expect(() => { first.find(20); }).toThrow();
+    });
   });
 
   describe('remove method', () => {
