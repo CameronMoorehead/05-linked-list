@@ -30,6 +30,7 @@ class LinkedList {
     }
 
     if (!this.next) {
+      this.value = null;
       return this;
     }
     if (this.next === node) {

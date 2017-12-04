@@ -26,7 +26,7 @@ describe('linked-list.js', () => {
     const third = new LinkedList(30);
 
     first.append(second);
-    first.append(third);
+    second.append(third);
 
     expect(first.value).toEqual(10);
     expect(first.next.value).toEqual(20);
@@ -37,6 +37,14 @@ describe('linked-list.js', () => {
 
     expect(first.value).toEqual(10);
     expect(first.next.value).toEqual(30);
-    expect(first.next.next).toEqual(null);
+    expect(first.next.next).toBeNull();
+  });
+
+  test('should return null if linked list is one element and head is removed', () => {
+    const first = new LinkedList(10);
+
+    first.remove(first);
+
+    expect(first.value).toBeNull();
   });
 });
