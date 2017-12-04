@@ -21,12 +21,10 @@ class LinkedList {
   }
 
   find(value) {
-    if (this.value === null) {
-      throw new ReferenceError('<value> cannot be found');
-    }
-
     if (this.value === value) {
       return this;
+    } if (this.next === null) {
+      throw new ReferenceError('<value> cannot be found');
     } else {
       return this.next.find(value);
     }

@@ -27,12 +27,10 @@ describe('linked-list.js', () => {
 
       expect(() => { first.append(second); }).toThrow();
     });
-
-
   });
 
   describe('find method', () => {
-    test('return the node within the list the the corresponding value', () => {
+    test('return the node within the list with the corresponding value', () => {
       const first = new LinkedList(10);
       const second = new LinkedList(20);
 
@@ -58,7 +56,7 @@ describe('linked-list.js', () => {
       const third = new LinkedList(30);
 
       first.append(second);
-      second.append(third);
+      first.append(third);
 
       expect(first.value).toEqual(10);
       expect(first.next.value).toEqual(20);
@@ -72,12 +70,19 @@ describe('linked-list.js', () => {
       expect(first.next.next).toBeNull();
     });
 
-    test('should return null if linked list is one element and head is removed', () => {
+    test('return null if linked list is one element and head is removed', () => {
       const first = new LinkedList(10);
 
       first.remove(first);
 
       expect(first.value).toBeNull();
+    });
+
+    test('throw an error if node is not an instance of LinkedList', () => {
+      const first = new LinkedList(10);
+      const second = 'not a linked list';
+
+      expect(() => { first.remove(second); }).toThrow();
     });
   });
 });
